@@ -13,3 +13,4 @@ cert = crypto.dump_certificate(crypto.FILETYPE_PEM, pkcs12.get_certificate())
 chave = crypto.dump_privatekey(crypto.FILETYPE_PEM, pkcs12.get_privatekey())
 
 print(cert, chave)
+print('\n')
