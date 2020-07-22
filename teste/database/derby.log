@@ -1,0 +1,15 @@
+Apache Derby Servidor de Rede - 10.2.2.0 - (485682) iniciado e pronto para aceitar conexões na porta 1527 em 2020-07-22 20:29:18.998 GMT
+2020-07-22 20:29:21.985 GMT Thread[DRDAConnThread_36,5,javawsApplicationThreadGroup] (DATABASE = NFE_400), (DRDAID = {5}), Failed to start database 'NFE_400', see the next exception for details.
+2020-07-22 20:29:21.986 GMT Thread[DRDAConnThread_36,5,javawsApplicationThreadGroup] (DATABASE = NFE_400), (DRDAID = {5}), Another instance of Derby may have already booted the database C:\database\NFE_400.
+2020-07-22 20:29:23.050 GMT Thread[DRDAConnThread_37,5,javawsApplicationThreadGroup] (DATABASE = NFE_400), (DRDAID = {6}), Failed to start database 'NFE_400', see the next exception for details.
+2020-07-22 20:29:23.050 GMT Thread[DRDAConnThread_37,5,javawsApplicationThreadGroup] (DATABASE = NFE_400), (DRDAID = {6}), Another instance of Derby may have already booted the database C:\database\NFE_400.
+2020-07-22 20:29:29.445 GMT Thread[DRDAConnThread_35,5,javawsApplicationThreadGroup] (DATABASE = NFE_400), (DRDAID = {7}), Failed to start database 'NFE_400', see the next exception for details.
+2020-07-22 20:29:29.445 GMT Thread[DRDAConnThread_35,5,javawsApplicationThreadGroup] (DATABASE = NFE_400), (DRDAID = {7}), Another instance of Derby may have already booted the database C:\database\NFE_400.
+2020-07-22 20:29:29.553 GMT Thread[DRDAConnThread_36,5,javawsApplicationThreadGroup] (DATABASE = NFE_400), (DRDAID = {8}), Failed to start database 'NFE_400', see the next exception for details.
+2020-07-22 20:29:29.553 GMT Thread[DRDAConnThread_36,5,javawsApplicationThreadGroup] (DATABASE = NFE_400), (DRDAID = {8}), Another instance of Derby may have already booted the database C:\database\NFE_400.
+2020-07-22 20:29:29.610 GMT Thread[DRDAConnThread_37,5,javawsApplicationThreadGroup] (DATABASE = NFE_400), (DRDAID = {9}), Failed to start database 'NFE_400', see the next exception for details.
+2020-07-22 20:29:29.610 GMT Thread[DRDAConnThread_37,5,javawsApplicationThreadGroup] (DATABASE = NFE_400), (DRDAID = {9}), Another instance of Derby may have already booted the database C:\database\NFE_400.
+2020-07-22 20:29:29.633 GMT Thread[DRDAConnThread_35,5,javawsApplicationThreadGroup] (DATABASE = NFE_400), (DRDAID = {10}), Failed to start database 'NFE_400', see the next exception for details.
+2020-07-22 20:29:29.633 GMT Thread[DRDAConnThread_35,5,javawsApplicationThreadGroup] (DATABASE = NFE_400), (DRDAID = {10}), Another instance of Derby may have already booted the database C:\database\NFE_400.
+2020-07-22 20:29:29.942 GMT Thread[DRDAConnThread_36,5,javawsApplicationThreadGroup] (DATABASE = NFE_400), (DRDAID = {11}), Failed to start database 'NFE_400', see the next exception for details.
+2020-07-22 20:29:29.942 GMT Thread[DRDAConnThread_36,5,javawsApplicationThreadGroup] (DATABASE = NFE_400), (DRDAID = {11}), Another instance of Derby may have already booted the database C:\database\NFE_400.
