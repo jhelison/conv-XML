@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infNFe Id="NFe21200703867404000175550010000005921000168093" versao="4.00">
+        <ide>
+            <cUF>21</cUF>
+            <cNF>00016809</cNF>
+            <natOp>Venda de mercadoria adquirida ou recebida de terceiros</natOp>
+            <mod>55</mod>
+            <serie>1</serie>
+            <nNF>592</nNF>
+            <dhEmi>2020-07-03T12:53:25-03:00</dhEmi>
+            <dhSaiEnt>2020-07-03T12:53:25-03:00</dhSaiEnt>
+            <tpNF>1</tpNF>
+            <idDest>1</idDest>
+            <cMunFG>2102325</cMunFG>
+            <tpImp>1</tpImp>
+            <tpEmis>1</tpEmis>
+            <cDV>3</cDV>
+            <tpAmb>1</tpAmb>
+            <finNFe>1</finNFe>
+            <indFinal>1</indFinal>
+            <indPres>0</indPres>
+            <procEmi>0</procEmi>
+            <verProc>4.4.9.138</verProc>
+        </ide>
+        <emit>
+            <CNPJ>03867404000175</CNPJ>
+            <xNome>ORIZA VIEIRA LIMA</xNome>
+            <xFant>O TIJOLAO 2</xFant>
+            <enderEmit>
+                <xLgr>RUA INDEPENDENCIA</xLgr>
+                <nro>137</nro>
+                <xBairro>CENTRO</xBairro>
+                <cMun>2102325</cMun>
+                <xMun>BURITICUPU</xMun>
+                <UF>MA</UF>
+                <CEP>65393000</CEP>
+                <cPais>1058</cPais>
+                <xPais>BRASIL</xPais>
+                <fone>09835380400</fone>
+            </enderEmit>
+            <IE>125859520</IE>
+            <CRT>1</CRT>
+        </emit>
+        <dest>
+            <CPF>89441087300</CPF>
+            <xNome>MANOEL SEBASTIAO COELHO DE SOUSA</xNome>
+            <enderDest>
+                <xLgr>RUA DO PLANALTO</xLgr>
+                <nro>SN</nro>
+                <xBairro>ALTA MIRA</xBairro>
+                <cMun>2102325</cMun>
+                <xMun>BURITICUPU</xMun>
+                <UF>MA</UF>
+                <CEP>65393000</CEP>
+                <cPais>1058</cPais>
+                <xPais>BRASIL</xPais>
+                <fone>98858694892</fone>
+            </enderDest>
+            <indIEDest>9</indIEDest>
+        </dest>
+        <det nItem="1">
+            <prod>
+                <cProd>001751</cProd>
+                <cEAN>SEM GTIN</cEAN>
+                <xProd>ESMERILHADEIRA GWS 850W 220V 214 BOSCH</xProd>
+                <NCM>84672999</NCM>
+                <CFOP>5102</CFOP>
+                <uCom>UN</uCom>
+                <qCom>1</qCom>
+                <vUnCom>549.9000</vUnCom>
+                <vProd>549.90</vProd>
+                <cEANTrib>SEM GTIN</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>1</qTrib>
+                <vUnTrib>549.9</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <vTotTrib>82.97</vTotTrib>
+                <ICMS>
+                    <ICMSSN102>
+                        <orig>0</orig>
+                        <CSOSN>102</CSOSN>
+                    </ICMSSN102>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPITrib>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>0.00</pIPI>
+                        <vIPI>0.00</vIPI>
+                    </IPITrib>
+                </IPI>
+                <PIS>
+                    <PISOutr>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pPIS>0.00</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISOutr>
+                </PIS>
+                <COFINS>
+                    <COFINSOutr>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pCOFINS>0.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSOutr>
+                </COFINS>
+            </imposto>
+        </det>
+        <total>
+            <ICMSTot>
+                <vBC>0.00</vBC>
+                <vICMS>0.00</vICMS>
+                <vICMSDeson>0.00</vICMSDeson>
+                <vFCPUFDest>0.00</vFCPUFDest>
+                <vICMSUFDest>0.00</vICMSUFDest>
+                <vICMSUFRemet>0.00</vICMSUFRemet>
+                <vFCP>0.00</vFCP>
+                <vBCST>0.00</vBCST>
+                <vST>0.00</vST>
+                <vFCPST>0.00</vFCPST>
+                <vFCPSTRet>0.00</vFCPSTRet>
+                <vProd>549.90</vProd>
+                <vFrete>0.00</vFrete>
+                <vSeg>0.00</vSeg>
+                <vDesc>0.00</vDesc>
+                <vII>0.00</vII>
+                <vIPI>0.00</vIPI>
+                <vIPIDevol>0.00</vIPIDevol>
+                <vPIS>0.00</vPIS>
+                <vCOFINS>0.00</vCOFINS>
+                <vOutro>0.00</vOutro>
+                <vNF>549.90</vNF>
+                <vTotTrib>82.97</vTotTrib>
+            </ICMSTot>
+        </total>
+        <transp>
+            <modFrete>9</modFrete>
+        </transp>
+        <pag>
+            <detPag>
+                <indPag>1</indPag>
+                <tPag>03</tPag>
+                <vPag>549.90</vPag>
+                <card>
+                    <tpIntegra>2</tpIntegra>
+                    <tBand>99</tBand>
+                </card>
+            </detPag>
+        </pag>
+        <infAdic>
+            <infCpl>Trib aprox R$: 34.58 Federal e 48.39 Estadual |Fonte: IBPT/empresometro.com.br             A5G7R1|</infCpl>
+        </infAdic>
+        <infRespTec>
+            <CNPJ>43728245000142</CNPJ>
+            <xContato>suporte</xContato>
+            <email>suporteemissores@sebraesp.com.br</email>
+            <fone>08005700800</fone>
+        </infRespTec>
+    </infNFe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFe21200703867404000175550010000005921000168093">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>LFCkedQ/IypxX6T5qEQzAL9DAjM=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>zTCgq4ednpts/WjwXK659FmV9/sH8vKYwYcM9loK7p0DumcpxKOEA0V5MdaUSdz8SxQIGiQYId0p&#13; pepzksh37L4u88kIfGy3/jYfADcExEvzVfK81N+sMeaypuCV1/L0UmZuO3agGksi/1mPI2vYsvnL&#13; oFX5cuUdHZiCXwUzEC5HY6Juh+Y2pYyQPU1TgNtjlJqHg05lBDuF0JkA3yGb4ogkgvkrjVhTiMIG&#13; VjHYplakQO4SNgMNVfHsfye6ZU2RZGhb7tP+H6esq4L/R/s1553xTBtQZAaEDqUGa2UEdjvrIcf/&#13; qvwjZilQ0D4eArB1pLhjGvFkSb40gPDGp+tZaA==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>MIIHwzCCBaugAwIBAgIIRUYgAhdFkrQwDQYJKoZIhvcNAQELBQAwgYkxCzAJBgNVBAYTAkJSMRMw&#13; EQYDVQQKEwpJQ1AtQnJhc2lsMTQwMgYDVQQLEytBdXRvcmlkYWRlIENlcnRpZmljYWRvcmEgUmFp&#13; eiBCcmFzaWxlaXJhIHYyMRIwEAYDVQQLEwlBQyBTT0xVVEkxGzAZBgNVBAMTEkFDIFNPTFVUSSBN&#13; dWx0aXBsYTAeFw0yMDAyMTkxMDMyMDdaFw0yMTAyMTgxMDMyMDdaMIHpMQswCQYDVQQGEwJCUjET&#13; MBEGA1UEChMKSUNQLUJyYXNpbDE0MDIGA1UECxMrQXV0b3JpZGFkZSBDZXJ0aWZpY2Fkb3JhIFJh&#13; aXogQnJhc2lsZWlyYSB2MjESMBAGA1UECxMJQUMgU09MVVRJMRswGQYDVQQLExJBQyBTT0xVVEkg&#13; TXVsdGlwbGExFzAVBgNVBAsTDjIyNTM2Njg5MDAwMTA2MRowGAYDVQQLExFDZXJ0aWZpY2FkbyBQ&#13; SiBBMTEpMCcGA1UEAxMgT1JJWkEgVklFSVJBIExJTUE6MDM4Njc0MDQwMDAxNzUwggEiMA0GCSqG&#13; SIb3DQEBAQUAA4IBDwAwggEKAoIBAQDa98WwV7Ok1KRGgiPXdXii5Af910uItXe07QHZnDLRuAb5&#13; nMEBCLaBGcP6No5aW/d3z6qO53Csr+xMDinLt3A0YlQ1terY1of5bG4u1vY7O21mrgrZTOKfiudQ&#13; dPUxBywiFc7dq9DKdFXLWKuJ8gSTSS6LU2ysb18JKgx6kJqueUOvTCNVORvjh2GRn1ABH17xujWC&#13; KT+mNnr8unGa6NDgSDeVmErRyepySyuxdn47uSMGX5e8y5MBitBJipQDg38WzWcm0TnXIR0bnSEw&#13; 9aRIJFOtplpS2sIRr8nvair737JHLrhZ0VWlPbCHMnBzFBBL8+CUlju+7LRtAieEpE3hAgMBAAGj&#13; ggLLMIICxzBUBggrBgEFBQcBAQRIMEYwRAYIKwYBBQUHMAKGOGh0dHA6Ly9jY2QuYWNzb2x1dGku&#13; Y29tLmJyL2xjci9hYy1zb2x1dGktbXVsdGlwbGEtdjEucDdiMB0GA1UdDgQWBBTZVd+K6qyESsO5&#13; APJ+NQF0J8XOlTAJBgNVHRMEAjAAMB8GA1UdIwQYMBaAFDWuMRT2XtJ6T1j+NKgaZ5cKxJsHMF4G&#13; A1UdIARXMFUwUwYGYEwBAgEmMEkwRwYIKwYBBQUHAgEWO2h0dHBzOi8vY2NkLmFjc29sdXRpLmNv&#13; bS5ici9kb2NzL2RwYy1hYy1zb2x1dGktbXVsdGlwbGEucGRmMIHeBgNVHR8EgdYwgdMwPqA8oDqG&#13; OGh0dHA6Ly9jY2QuYWNzb2x1dGkuY29tLmJyL2xjci9hYy1zb2x1dGktbXVsdGlwbGEtdjEuY3Js&#13; MD+gPaA7hjlodHRwOi8vY2NkMi5hY3NvbHV0aS5jb20uYnIvbGNyL2FjLXNvbHV0aS1tdWx0aXBs&#13; YS12MS5jcmwwUKBOoEyGSmh0dHA6Ly9yZXBvc2l0b3Jpby5pY3BicmFzaWwuZ292LmJyL2xjci9B&#13; Q1NPTFVUSS9hYy1zb2x1dGktbXVsdGlwbGEtdjEuY3JsMA4GA1UdDwEB/wQEAwIF4DAdBgNVHSUE&#13; FjAUBggrBgEFBQcDAgYIKwYBBQUHAwQwgbMGA1UdEQSBqzCBqIEVb3JpemFsaW1hQGhvdG1haWwu&#13; Y29toBwGBWBMAQMCoBMTEU9SSVpBIFZJRUlSQSBMSU1BoBkGBWBMAQMDoBATDjAzODY3NDA0MDAw&#13; MTc1oD0GBWBMAQMEoDQTMjIxMDExOTcwNDI3ODkzNDYzNzIwMDAwMDAwMDAwMDAwMDAwMTA4NjIx&#13; MDk5NlNTUE1BoBcGBWBMAQMHoA4TDDAwMDAwMDAwMDAwMDANBgkqhkiG9w0BAQsFAAOCAgEALRtl&#13; kyzwGeMfldyBpkCRX6Y0+NQjZsk9umxufuMTvE8fB5sxH3P6ae8SL8lpn6P0K/F/YYdOMCfbtfdm&#13; 7JlPU0XpkSaXtfQ00Fj/kGTKTPmsEtZrf1D3O2ULYOX2xfpXN2E7Gv5ccgJImeeMDCY1qzQqMilu&#13; dTT7ghW4H5Bhx39gCufvmkfT/6DvERwQQzCdoQU6S0vx9oJNkmetnA4x3ZQn511uEyYwOlseIjUN&#13; KI7XUCcx26QlDS6EvXP//ZvnWsSKebFJLqjau2kkhExqytqwgvUaeyQfm0aXQGeEQ0+IXTbuEcBL&#13; PiTChvp2ypW7PJ+oaucN6UB4Wz8cs7V+5SYpIFMsYX4Ks0qXEew1O+OG26Z0IONpyfXUeS9Yv2iz&#13; JwJZQq8dsql9XV2oh9aWdCXIHQ1UrpeIb9e8vaq863/GHd/ZfXLtsQBwXGtThAvKOIYCnJEUCA/6&#13; rJXDMCEBIljwYXvrqKganKVllElmPwkD00pxP9AjX22hFrtT1PM7OdzeOX8G0oJ+QNf6omv1RqsK&#13; Jl0z29vXapug+ZPeDVUmOPrJ5LrkyOuoPgo2mHYSQ8jcovQtV4b2KpGZPNUcUB3FonrD9aF2hfQa&#13; 6F0PVQLqVaM+u54iQC9CHzAHB3LuYzoLYhsX745T3MmxuPHKm2/NfHbgp3TcFRgTAO6whec=</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFe>
