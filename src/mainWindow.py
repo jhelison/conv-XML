@@ -24,9 +24,9 @@ class Main(QtWidgets.QMainWindow, mainWindowComponent.Ui_MainWindow):
             self.config['cert_path'] = os.getcwd()
         
         self.config['cert_path'] = QtWidgets.QFileDialog.getOpenFileName(self,
-        'Abrir Certificado',
-        self.config['cert_path'],
-        "Arquivo de Certificado (*.pfx *.cer)")[0]
+                                                                         'Abrir Certificado',
+                                                                         self.config['cert_path'],
+                                                                         "Arquivo de Certificado (*.pfx *.cer)")[0]
 
         
 
