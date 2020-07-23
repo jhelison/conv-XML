@@ -5,6 +5,7 @@ import os
 import shelve
 
 from src.components import mainWindowComponent
+from src.XMLSigner import XMLSigner
 
 class Main(QtWidgets.QMainWindow, mainWindowComponent.Ui_MainWindow):
     def __init__(self):
@@ -32,16 +33,10 @@ class Main(QtWidgets.QMainWindow, mainWindowComponent.Ui_MainWindow):
         if 'cert_path' in keys:
             self.lineEdit__local_certificado.setText(self.config['cert_path'])
             self.lineEdit_senha_certificado.setEnabled(True)
-        else:
-            self.config['cert_path'] = os.getcwd()
         if 'input_folder' in keys:
             self.lineEdit_input_xml.setText(self.config['input_folder'])
-        else:
-            self.config['input_folder'] = os.getcwd()
         if 'output_folder' in keys:
             self.lineEdit_output_xml.setText(self.config['output_folder'])
-        else:
-            self.config['output_folder'] = os.getcwd()
         if 'cert_password' in keys:
             self.lineEdit_senha_certificado.setText(self.config['cert_password'])
         else:
@@ -50,35 +45,42 @@ class Main(QtWidgets.QMainWindow, mainWindowComponent.Ui_MainWindow):
         self.enable_process_button()
             
 
-    def button_open_certify(self):      
+    def button_open_certify(self): 
+        if 'cert_path' in list(self.config.keys()):
+            location = self.config['cert_path']
+        else:
+            location = ""
         self.config['cert_path'] = QtWidgets.QFileDialog.getOpenFileName(self,
                                                                          'Abrir Certificado',
-                                                                         self.config['cert_path'],
+                                                                         location,
                                                                          "Arquivo de Certificado (*.pfx *.cer)")[0]
         
         self.lineEdit__local_certificado.setText(self.config['cert_path'])
         self.lineEdit_senha_certificado.setEnabled(True)
         self.enable_process_button()
         
-    def button_xml_input_folder(self):            
-        self.config['input_folder'] = QtWidgets.QFileDialog.getExistingDirectory(self,
-                                                                                 'Pasta de entrada de XML',
-                                                                                 self.config['input_folder'])
+    def button_xml_input_folder(self):
+        if 'input_folder' in list(self.config.keys()):
+            location = self.config['input_folder']
+        else:
+            location = ""        
+        self.config['input_folder'] = QtWidgets.QFileDialog.getExistingDirectory(self, 'Pasta de entrada de XML', location)
         
         self.lineEdit_input_xml.setText(self.config['input_folder'])
         self.enable_process_button()
 
     def button_xml_output_folder(self):
-        self.config['output_folder'] = QtWidgets.QFileDialog.getExistingDirectory(self,
-                                                                                 'Pasta de saída de XML',
-                                                                                 self.config['output_folder'])
+        if 'output_folder' in list(self.config.keys()):
+            location = self.config['output_folder']
+        else:
+            location = ""  
+        self.config['output_folder'] = QtWidgets.QFileDialog.getExistingDirectory(self, 'Pasta de saída de XML', location)
         
         self.lineEdit_output_xml.setText(self.config['output_folder'])
         self.enable_process_button()
 
     def enable_process_button(self):
-        keys = list(self.config.keys())
-        if 'cert_path' in keys and 'input_folder' in keys and 'output_folder' in keys:
+        if self.config['cert_path'] and self.config['input_folder'] and self.config['output_folder']:
             self.pushButton_process.setEnabled(True)
             
     def on_password_edit(self):
@@ -90,11 +92,25 @@ class Main(QtWidgets.QMainWindow, mainWindowComponent.Ui_MainWindow):
         input_folder = self.config['input_folder']
         output_folder = self.config['output_folder']
         
-        self.show_error('teste')
+        XMLsigner = XMLSigner()
         
+        try:
+            XMLsigner.certify_credential(cert, password)
+        except Exception as exception:
+            self.show_error(str(exception))
+            return
+        
+        for file in os.listdir(input_folder):
+            if file.endswith('.xml'):
+                full_path = input_folder + '/' + file
+                signed_xml = XMLsigner.process_nfe(full_path)
+                print(output_folder)
+                XMLSigner.save_xml(signed_xml, output_folder, file)
+                
     def show_error(self, text):
-        msg = QtWidgets.QErrorMessage()
-        msg.showMessage(text)
+        msg = QtWidgets.QMessageBox()
+        msg.setText(text)
+        msg.setIcon(QtWidgets.QMessageBox.Warning)
         msg.exec_()
 
 

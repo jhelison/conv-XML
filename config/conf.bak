@@ -1,4 +1,4 @@
-'cert_path', (0, 10)
-'input_folder', (512, 70)
-'output_folder', (1024, 70)
-'cert_password', (1536, 10)
+'cert_password', (0, 18)
+'input_folder', (512, 48)
+'output_folder', (1024, 68)
+'cert_path', (1536, 106)
