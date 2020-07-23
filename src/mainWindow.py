@@ -11,11 +11,10 @@ class Main(QtWidgets.QMainWindow, mainWindowComponent.Ui_MainWindow):
         QtWidgets.QMainWindow.__init__(self)
         self.setupUi(self)
 
-        self.config = shelve.open('./config/conf')
-
         self.pushButton_local_certificado.clicked.connect(self.button_open_certify)
         self.pushButton_input_xml.clicked.connect(self.button_xml_input_folder)
         self.pushButton_output_xml.clicked.connect(self.button_xml_output_folder)
+        self.pushButton_process.clicked.connect(self.button_processar)
         
         self.lineEdit_senha_certificado.textChanged.connect(self.on_password_edit)
         
@@ -24,6 +23,10 @@ class Main(QtWidgets.QMainWindow, mainWindowComponent.Ui_MainWindow):
         self.show()
         
     def initialize_elements(self):
+        if not os.path.isdir('./config'):
+            os.makedirs('./config')
+
+        self.config = shelve.open('./config/conf')
         keys = list(self.config.keys())
         
         if 'cert_path' in keys:
@@ -81,6 +84,18 @@ class Main(QtWidgets.QMainWindow, mainWindowComponent.Ui_MainWindow):
     def on_password_edit(self):
         self.config['cert_password'] = self.lineEdit_senha_certificado.text()
         
+    def button_processar(self):
+        cert = self.config['cert_path']
+        password = self.config['cert_password']
+        input_folder = self.config['input_folder']
+        output_folder = self.config['output_folder']
+        
+        self.show_error('teste')
+        
+    def show_error(self, text):
+        msg = QtWidgets.QErrorMessage()
+        msg.showMessage(text)
+        msg.exec_()
 
 
 
