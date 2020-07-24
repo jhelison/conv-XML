@@ -42,7 +42,7 @@ class XMLSigner:
         
     def save_xml(self, xml_text, save_path, file_name = ""):
         signed_name = save_path + '/' + file_name[:-4] + '-nfe-sign' + '.xml'
-        print(save_path)
+        print(signed_name)
         output = open(signed_name, 'w', encoding="utf-8")
         output.write(xml_text)
         output.close()

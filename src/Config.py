@@ -6,14 +6,12 @@ class Config():
         if not os.path.isdir('./config'):
             os.makedirs('./config')
             
-        with open('./config/config.json', 'w+') as f:
-            text = f.read()
-            print('text is: ', text)
-            try:
-                self.config = json.loads(text)
-                f.close()
-            except:
-                self.init()
+        try:
+            self.getConfig()
+        except:
+            self.config = {}
+            self.init()
+            
   
     def init(self):
         self.config['cert_path'] = ""
@@ -39,3 +37,11 @@ class Config():
         with open('./config/config.json', 'w') as f:
             json.dump(self.config, f)
             f.close()
+            
+    def getConfig(self):
+        with open('./config/config.json', 'r') as f:
+            text = f.read()
+            config = json.loads(text)
+            f.close()
+            
+        self.config = config

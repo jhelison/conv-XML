@@ -27,15 +27,16 @@ class Main(QtWidgets.QMainWindow, mainWindowComponent.Ui_MainWindow):
         self.cf = Config()
         
         self.lineEdit__local_certificado.setText(self.cf.get('cert_path'))
-        self.lineEdit_senha_certificado.setEnabled(True)
+        if self.cf.get('cert_path'):
+            self.lineEdit_senha_certificado.setEnabled(True)
+            self.lineEdit_senha_certificado.setText(self.cf.get('cert_password'))
         
         self.lineEdit_input_xml.setText(self.cf.get('input_folder'))
 
         self.lineEdit_output_xml.setText(self.cf.get('output_folder'))
-
-        self.lineEdit_senha_certificado.setText(self.cf.get('cert_password'))
-            
+        
         self.enable_process_button()
+    
             
     def button_open_certify(self): 
         path = QtWidgets.QFileDialog.getOpenFileName(self, 
@@ -46,7 +47,8 @@ class Main(QtWidgets.QMainWindow, mainWindowComponent.Ui_MainWindow):
         self.cf.save('cert_path', path)
         
         self.lineEdit__local_certificado.setText(path)
-        self.lineEdit_senha_certificado.setEnabled(True)
+        if path:
+            self.lineEdit_senha_certificado.setEnabled(True)
         self.enable_process_button()
         
     def button_xml_input_folder(self):
@@ -74,7 +76,7 @@ class Main(QtWidgets.QMainWindow, mainWindowComponent.Ui_MainWindow):
             self.pushButton_process.setEnabled(True)
             
     def on_password_edit(self):
-        self.cf.save('output_folder', self.lineEdit_senha_certificado.text())
+        self.cf.save('cert_password', self.lineEdit_senha_certificado.text())
         
     def button_processar(self):
         cert = self.cf.get('cert_path')
@@ -82,20 +84,30 @@ class Main(QtWidgets.QMainWindow, mainWindowComponent.Ui_MainWindow):
         input_folder = self.cf.get('input_folder')
         output_folder = self.cf.get('output_folder')
         
-        XMLsigner = XMLSigner()
+        XMLSigneri = XMLSigner()
         
         try:
-            XMLsigner.certify_credential(cert, password)
+            XMLSigneri.certify_credential(cert, password)
+            
+            self.plainTextEdit_log.appendPlainText("Certificado Validado!")
+            self.plainTextEdit_log.appendPlainText("")
+            QtWidgets.QApplication.processEvents()
+            
         except Exception as exception:
             self.show_error(str(exception))
             return
         
-        for file in os.listdir(input_folder):
-            if file.endswith('.xml'):
+        xmls = [file for file in os.listdir(input_folder) if file.endswith('.xml')]
+        
+        for index, file in enumerate(xmls):
                 full_path = input_folder + '/' + file
-                signed_xml = XMLsigner.process_nfe(full_path)
-                print(output_folder)
-                XMLSigner.save_xml(signed_xml, output_folder, file)
+                
+                self.plainTextEdit_log.appendPlainText(f"Processando: {file}")
+                QtWidgets.QApplication.processEvents()
+                self.progressBar.setValue(((index+1)/len(xmls)) * 100)
+                
+                signed_xml = XMLSigneri.process_nfe(full_path)
+                XMLSigneri.save_xml(signed_xml, output_folder, file)
                 
     def show_error(self, text):
         msg = QtWidgets.QMessageBox()
@@ -104,10 +116,8 @@ class Main(QtWidgets.QMainWindow, mainWindowComponent.Ui_MainWindow):
         msg.exec_()
 
 
-
-
-
 app = QtWidgets.QApplication(sys.argv)
+app.setStyle("Fusion")
 window = Main()
 sys.exit(app.exec_())
 
