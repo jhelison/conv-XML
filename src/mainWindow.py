@@ -2,10 +2,10 @@ import PyQt5
 from PyQt5 import QtCore, QtGui, QtWidgets
 import sys
 import os
-import shelve
 
 from src.components import mainWindowComponent
 from src.XMLSigner import XMLSigner
+from src.Config import Config
 
 class Main(QtWidgets.QMainWindow, mainWindowComponent.Ui_MainWindow):
     def __init__(self):
@@ -24,73 +24,63 @@ class Main(QtWidgets.QMainWindow, mainWindowComponent.Ui_MainWindow):
         self.show()
         
     def initialize_elements(self):
-        if not os.path.isdir('./config'):
-            os.makedirs('./config')
-
-        self.config = shelve.open('./config/conf')
-        keys = list(self.config.keys())
+        self.cf = Config()
         
-        if 'cert_path' in keys:
-            self.lineEdit__local_certificado.setText(self.config['cert_path'])
-            self.lineEdit_senha_certificado.setEnabled(True)
-        if 'input_folder' in keys:
-            self.lineEdit_input_xml.setText(self.config['input_folder'])
-        if 'output_folder' in keys:
-            self.lineEdit_output_xml.setText(self.config['output_folder'])
-        if 'cert_password' in keys:
-            self.lineEdit_senha_certificado.setText(self.config['cert_password'])
-        else:
-            self.config['cert_password'] = ''
+        self.lineEdit__local_certificado.setText(self.cf.get('cert_path'))
+        self.lineEdit_senha_certificado.setEnabled(True)
+        
+        self.lineEdit_input_xml.setText(self.cf.get('input_folder'))
+
+        self.lineEdit_output_xml.setText(self.cf.get('output_folder'))
+
+        self.lineEdit_senha_certificado.setText(self.cf.get('cert_password'))
             
         self.enable_process_button()
             
-
     def button_open_certify(self): 
-        if 'cert_path' in list(self.config.keys()):
-            location = self.config['cert_path']
-        else:
-            location = ""
-        self.config['cert_path'] = QtWidgets.QFileDialog.getOpenFileName(self,
-                                                                         'Abrir Certificado',
-                                                                         location,
-                                                                         "Arquivo de Certificado (*.pfx *.cer)")[0]
+        path = QtWidgets.QFileDialog.getOpenFileName(self, 
+                                                     'Abrir Certificado', 
+                                                     self.cf.get('cert_path'), 
+                                                     "Arquivo de Certificado (*.pfx *.cer)")[0]
         
-        self.lineEdit__local_certificado.setText(self.config['cert_path'])
+        self.cf.save('cert_path', path)
+        
+        self.lineEdit__local_certificado.setText(path)
         self.lineEdit_senha_certificado.setEnabled(True)
         self.enable_process_button()
         
     def button_xml_input_folder(self):
-        if 'input_folder' in list(self.config.keys()):
-            location = self.config['input_folder']
-        else:
-            location = ""        
-        self.config['input_folder'] = QtWidgets.QFileDialog.getExistingDirectory(self, 'Pasta de entrada de XML', location)
+        path = QtWidgets.QFileDialog.getExistingDirectory(self,
+                                                          'Pasta de entrada de XML',
+                                                          self.cf.get('input_folder'))
         
-        self.lineEdit_input_xml.setText(self.config['input_folder'])
+        self.cf.save('input_folder', path)
+        
+        self.lineEdit_input_xml.setText(path)
         self.enable_process_button()
 
     def button_xml_output_folder(self):
-        if 'output_folder' in list(self.config.keys()):
-            location = self.config['output_folder']
-        else:
-            location = ""  
-        self.config['output_folder'] = QtWidgets.QFileDialog.getExistingDirectory(self, 'Pasta de saída de XML', location)
+        path = QtWidgets.QFileDialog.getExistingDirectory(self,
+                                                          'Pasta de saída de XML',
+                                                          self.cf.get('output_folder'))
         
-        self.lineEdit_output_xml.setText(self.config['output_folder'])
+        self.cf.save('output_folder', path)
+        
+        self.lineEdit_output_xml.setText(path)
         self.enable_process_button()
 
     def enable_process_button(self):
-        if self.config['cert_path'] and self.config['input_folder'] and self.config['output_folder']:
+        if self.cf.get('cert_path') and self.cf.get('input_folder') and self.cf.get('output_folder'):
             self.pushButton_process.setEnabled(True)
             
     def on_password_edit(self):
-        self.config['cert_password'] = self.lineEdit_senha_certificado.text()
+        self.cf.save('output_folder', self.lineEdit_senha_certificado.text())
         
     def button_processar(self):
-        cert = self.config['cert_path']
-        password = self.config['cert_password']
-        input_folder = self.config['input_folder']
-        output_folder = self.config['output_folder']
+        cert = self.cf.get('cert_path')
+        password = self.cf.get('cert_password')
+        input_folder = self.cf.get('input_folder')
+        output_folder = self.cf.get('output_folder')
         
         XMLsigner = XMLSigner()
         
